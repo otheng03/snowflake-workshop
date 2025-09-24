@@ -12,6 +12,7 @@ URL='s3://sfworkshop-sample-data/';
 
 // external stage (s3) 에 위치한 파일확인
 ls @ext_stg;
+-- s3://sfworkshop-sample-data/SF_KOSCOM_ETFMST.csv
 -- s3://sfworkshop-sample-data/SF_KOSCOM_ETF_JITRADE_DAILY.csv
 -- s3://sfworkshop-sample-data/SF_KOSCOM_ETF_JONG_DAILY.csv
 -- s3://sfworkshop-sample-data/SF_KOSCOM_ETF_MAST_DAILY.csv
@@ -48,4 +49,4 @@ from @ext_stg/SF_KOSCOM_ETF_JITRADE_DAILY.csv
 FILE_FORMAT = (FORMAT_NAME = 'csv_format_loading');
 
 ----------------------------------------------------------------
-// SF_KOSCOM_ETF_JONG_DAILY.csv 와 SF_KOSCOM_ETF_MAST_DAILY.csv 파일적재해보기
+// SF_KOSCOM_ETFMST, SF_KOSCOM_ETF_JONG_DAILY.csv 와 SF_KOSCOM_ETF_MAST_DAILY.csv 파일적재해보기
