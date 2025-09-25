@@ -97,6 +97,8 @@ on trade_daily.etf_item_cd = JONG_DAILY.etf_item_cd
 and trade_daily.base_dt = JONG_DAILY.base_dt
 ;
 
+-- downstream table 의 refresh 를 따라간다. 
+ALTER DYNAMIC TABLE trade_daily SET TARGET_LAG = DOWNSTREAM;
 
 show dynamic tables;
 
@@ -118,5 +120,6 @@ select max(base_dt) from SF_KOSCOM_ETF_JITRADE_DAILY;
 
 // TIGER 미국나스닥100 데이터 추가
 insert into SF_KOSCOM_ETF_JITRADE_DAILY
-values('2025-08-28','KR7133690008',6000,1076360,86041764600,175480,14020107350);
+values('2025-08-25','KR7133690008',6000,1076360,86041764600,175480,14020107350);
+
 
