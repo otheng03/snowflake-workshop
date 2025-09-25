@@ -1,7 +1,9 @@
 ## 03. 데이터 엔드포인트 API
 
 ## 3-1. api_user 생성 
+```sql
 api_setting.sql 참조
+```
 
 ## 3-2. keypair 생성
 ``` baxh
@@ -12,7 +14,11 @@ api_setting.sql 참조
 api_setting.sql 참조
 
 ## 3-4. jwt 토큰생성
-python jwt_token_generator.py 실행
+``` baxh
+python jwt_token_generator.py
+```
 
 ## 3-5. 쿼리실행요청
-/snowflake_curl.sh 실행
+```bash
+./snowflake_curl.sh 실행
+```
