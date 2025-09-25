@@ -1,0 +1,170 @@
+name: ETF_ANALYSIS
+tables:
+  - name: MARKET_INFO
+    base_table:
+      database: DEMO
+      schema: MAGI_HANDSON
+      table: MARKET_INFO
+    dimensions:
+      - name: BASE_IDX_NM
+        description: The name of the base index.
+        expr: BASE_IDX_NM
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - 코스피 200 선물지수
+          - 코스피 200
+          - 나스닥100
+      - name: ETF_ITEM_CD
+        description: The identification code for an ETF item.
+        expr: ETF_ITEM_CD
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - KR7360200000
+          - KR7304940000
+          - KR7360750004
+      - name: ITEM_NM_KOR
+        description: The name of the market item in Korean.
+        expr: ITEM_NM_KOR
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - RISE 200선물인버스2X
+          - TIGER 미국S&P500
+          - ACE 미국S&P500
+    time_dimensions:
+      - name: BASE_DT
+        description: The date of the market information.
+        expr: BASE_DT
+        data_type: DATE
+        sample_values:
+          - '2025-09-02'
+          - '2022-01-05'
+          - '2022-04-18'
+    facts:
+      - name: MKCAP
+        description: Market capitalization.
+        expr: MKCAP
+        data_type: FLOAT
+        sample_values:
+          - '1962870000000'
+          - '21392000000'
+          - '3324440000000'
+      - name: SUM_BUY_AMT
+        description: The total amount spent by customers.
+        expr: SUM_BUY_AMT
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '4402769420'
+          - '1547291775'
+          - '8022640'
+      - name: SUM_SEL_AMT
+        description: The total sales amount.
+        expr: SUM_SEL_AMT
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '1310366165'
+          - '740631885'
+          - '69887240345'
+  - name: ASSET_INFO
+    base_table:
+      database: DEMO
+      schema: MAGI_HANDSON
+      table: ASSET_INFO
+    dimensions:
+      - name: BASE_IDX_NM
+        description: The name of the base index.
+        expr: BASE_IDX_NM
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - 코스피 200
+          - 코스피 200 선물지수
+          - 나스닥100
+      - name: ETF_ITEM_CD
+        description: The identification code for an ETF item.
+        expr: ETF_ITEM_CD
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - KR7252710009
+          - KR7253240006
+          - KR7253230007
+      - name: ITEM_NM_KOR
+        description: The name of the item in Korean.
+        expr: ITEM_NM_KOR
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - KIWOOM 200선물레버리지
+          - KIWOOM 200선물인버스
+          - KIWOOM 200선물인버스2X
+      - name: MCP_NM_KOR
+        description: The name of the asset management company in Korean.
+        expr: MCP_NM_KOR
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - 키움투자자산운용
+          - 한화자산운용
+          - 미래에셋자산운용
+      - name: SSC_VARI_SIM
+        description: Signaling codes for SSC Vari Sim.
+        expr: SSC_VARI_SIM
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - +
+          - '-'
+          - '0'
+    time_dimensions:
+      - name: BASE_DT
+        description: The date on which the asset was recorded.
+        expr: BASE_DT
+        data_type: DATE
+        sample_values:
+          - '2018-01-02'
+          - '2018-01-03'
+          - '2018-01-04'
+    facts:
+      - name: AUM
+        description: The assets' total value under management.
+        expr: AUM
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '15358553584'
+          - '1849390000000'
+          - '29966163041'
+      - name: NAV
+        description: Net asset value.
+        expr: NAV
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '3208659'
+          - '760860'
+          - '770147'
+      - name: RDT_QTY
+        description: The quantity of the asset.
+        expr: RDT_QTY
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '8350000'
+          - '200000'
+          - '1000000'
+      - name: SSC_QTY
+        description: The quantity of the asset.
+        expr: SSC_QTY
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '1400000'
+          - '50000'
+          - '0'
+      - name: SSC_VARI
+        description: Asset serial control numbers.
+        expr: SSC_VARI
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '1165652000'
+          - '828374500'
+          - '808789000'
+      - name: SSC_VARI_AMT
+        description: Asset value in millions of dollars.
+        expr: SSC_VARI_AMT
+        data_type: NUMBER(38,0)
+        sample_values:
+          - '1165652000'
+          - '828374500'
+          - '808789000'
