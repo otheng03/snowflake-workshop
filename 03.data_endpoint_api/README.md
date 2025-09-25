@@ -4,7 +4,9 @@
 api_setting.sql 참조
 
 ## 3-2. keypair 생성
-./generate_keypair.sh 실행
+``` baxh
+./generate_keypair.sh 
+```
 
 ## 3-3. api_user 의 public key 업데이트 
 api_setting.sql 참조
