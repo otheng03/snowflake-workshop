@@ -15,7 +15,7 @@ from cryptography.hazmat.primitives.asymmetric import padding
 # ===========================================
 # 설정값 - 여기만 수정하세요
 # ===========================================
-ACCOUNT = "SFSEAPAC-KR_DEMO28"     # JavaScript와 동일
+ACCOUNT = "WQPKQED-NK88697"     # JavaScript와 동일
 USER = "API_USER"                  # JavaScript와 동일
 PRIVATE_KEY_FILE = "./rsa_key.p8"
 # ===========================================
@@ -133,7 +133,7 @@ def test_jwt_token(token):
     
     import requests
     
-    url = f"https://sfseapac-kr_demo28.snowflakecomputing.com/api/v2/statements"
+    url = f"https://{ACCOUNT}.snowflakecomputing.com/api/v2/statements"
     
     headers = {
         'Authorization': f'Bearer {token}',
