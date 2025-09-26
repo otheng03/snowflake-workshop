@@ -3,7 +3,7 @@
 -- create schema magi_handson;
 
 use demo.magi_handson;
-use warehouse compute_wh;
+use warehouse compute_wh; 
 
 // external stage (s3) 생성
 CREATE STAGE ext_stg
