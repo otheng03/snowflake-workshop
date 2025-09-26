@@ -58,7 +58,7 @@ order by base_dt;
 ---------------- workflow 2
 // dynamic table trade_daily 생성
 create or replace dynamic table trade_daily
-target_lag = '5 minutes'
+target_lag = '1 minutes'
 warehouse = compute_wh
 refresh_mode=incremental
 as
@@ -67,19 +67,19 @@ BASE_DT,
 master.ETF_ITEM_CD,
 ITEM_NM_KOR,
 BASE_IDX_NM,
-sum(BUY_AMT) as sum_buy_amt,
-sum(SEL_AMT) as sum_sel_amt
+sum(BUY_AMT::number) as sum_buy_amt,
+sum(SEL_AMT::number) as sum_sel_amt
 from SF_KOSCOM_ETF_JITRADE_DAILY daily
 join SF_KOSCOM_ETFMST master
 on daily.etf_item_cd = master.etf_item_cd
 group by 1,2,3,4
 ;
 
-select * from trade_daily;
+select * from trade_daily limit 10;
 
 // dynamic table market_info 생성
 create or replace dynamic table market_info
-target_lag = '5 minutes'
+target_lag = '1 minutes'
 warehouse = compute_wh
 refresh_mode=incremental
 as
@@ -97,7 +97,9 @@ on trade_daily.etf_item_cd = JONG_DAILY.etf_item_cd
 and trade_daily.base_dt = JONG_DAILY.base_dt
 ;
 
--- downstream table 의 refresh 를 따라간다. 
+// 화면 확인
+
+// downstream table 의 refresh 를 따라간다. 
 ALTER DYNAMIC TABLE trade_daily SET TARGET_LAG = DOWNSTREAM;
 
 show dynamic tables;
@@ -114,12 +116,13 @@ order by base_dt;
 
 ---------------------------------- 
 // data 변경
-desc table SF_KOSCOM_ETF_JITRADE_DAILY;
-
 select max(base_dt) from SF_KOSCOM_ETF_JITRADE_DAILY;
 
 // TIGER 미국나스닥100 데이터 추가
 insert into SF_KOSCOM_ETF_JITRADE_DAILY
 values('2025-08-25','KR7133690008',6000,1076360,86041764600,175480,14020107350);
+
+insert into SF_KOSCOM_ETF_JITRADE_DAILY
+values('2025-08-26','KR7133690008',6000,1076360,86041764600,175480,14020107350);
 
 
