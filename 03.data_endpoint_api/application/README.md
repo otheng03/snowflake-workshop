@@ -39,7 +39,6 @@ ALTER USER API_USER SET RSA_PUBLIC_KEY='여기에_공개키_내용';
 ```
 
 ### 3단계: 웹 애플리케이션 실행
-- ACCOUNT 정보 수정
 ```bash
 python app.py
 ```
