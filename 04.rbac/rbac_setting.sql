@@ -16,7 +16,7 @@ INSERT INTO mcp_role_mapping (mcp_nm_kor, role_name) VALUES
 ('미래에셋자산운용', 'ROLE_C'),
 ('미래에셋자산운용', 'ROLE_D'),
 ('한국투자신탁운용(ETF)', 'ROLE_A'),
-('유리자산운용', 'ROLE_A'),
+('우리자산운용', 'ROLE_A'),
 ('iM에셋자산운용', 'ROLE_A'),
 ('iM에셋자산운용', 'ROLE_B'),
 ('KB자산운용', 'ROLE_A'),
@@ -87,7 +87,18 @@ grant usage on warehouse compute_wh to role role_A;
 // 사용자에게 role 할당
 grant role role_A to user mjlee; 
 
+// accountadmin role 테스트
+use role accountadmin;
+select * from asset_info
+where mcp_nm_kor = '타임폴리오자산운용';
+
+// role_A 테스트
+use role role_a;
+select * from asset_info
+where mcp_nm_kor = '타임폴리오자산운용';
+
 ------------------------------------------------- 
+use role accountadmin;
 
 create role role_B;
 grant usage on database demo to role role_B;
@@ -119,23 +130,23 @@ grant role role_D to user mjlee;
 
 // accountadmin role 테스트
 use role accountadmin;
-select * from asset_info;
+select count(*) from asset_info;
 
 // role_A 테스트
 use role role_a;
-select * from asset_info;
+select count(*) from asset_info;
 
 // role_B 테스트
 use role role_b;
-select * from asset_info;
+select count(*) from asset_info;
 
 // role_C 테스트
 use role role_c;
-select * from asset_info;
+select count(*) from asset_info;
 
 // role_D 테스트
 use role role_d;
-select * from asset_info;
+select count(*) from asset_info;
 
 
 
