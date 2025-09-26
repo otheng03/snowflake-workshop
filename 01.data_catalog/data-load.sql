@@ -50,3 +50,9 @@ FILE_FORMAT = (FORMAT_NAME = 'csv_format_loading');
 
 ----------------------------------------------------------------
 // SF_KOSCOM_ETFMST, SF_KOSCOM_ETF_JONG_DAILY.csv 와 SF_KOSCOM_ETF_MAST_DAILY.csv 파일적재해보기
+
+
+
+----------------------------------------------------------------
+// 적재 확인
+show tables;
