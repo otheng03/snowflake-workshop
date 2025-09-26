@@ -38,7 +38,7 @@ CREATE OR REPLACE TABLE SF_KOSCOM_ETF_JITRADE_DAILY
         IGNORE_CASE => true
       )
     )
-  ); 
+  );
 
 // 확인
 select * from SF_KOSCOM_ETF_JITRADE_DAILY limit 10;
