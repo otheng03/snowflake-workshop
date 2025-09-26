@@ -16,6 +16,7 @@ api_setting.sql 참조
 ```
 
 ### 3-4. jwt 토큰생성
+jwt_token_generator.py 에서 ACCOUNT, USER, PRIVATE_KEY_FILE 정보 수정
 ``` baxh
 python jwt_token_generator.py
 ```
