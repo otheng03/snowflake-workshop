@@ -21,6 +21,9 @@ python jwt_token_generator.py
 ```
 
 ### 3-5. 쿼리실행요청
+snowflake_curl.sh 에서 ACCOUNT 정보 수정
+snowflake_curl.sh 에서 JWT_TOKEN 값을 3-4 의 토큰 값으로 수정
+
 ```bash
 ./snowflake_curl.sh 실행
 ```
