@@ -20,10 +20,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'snowflake-query-app-secret-key'
 
 # Snowflake 설정 (jwt_token_generator.py와 동일)
-ACCOUNT = "SFSEAPAC-KR_DEMO28"
+ACCOUNT = "WQPKQED-NK88697"
 USER = "API_USER"
 PRIVATE_KEY_FILE = "../rsa_key.p8"
-SNOWFLAKE_API_URL = f"https://sfseapac-kr_demo28.snowflakecomputing.com/api/v2/statements"
+SNOWFLAKE_API_URL = f"https://{ACCOUNT}.snowflakecomputing.com/api/v2/statements"
 
 def base64_encode(data, is_json=True):
     """JavaScript base64Encode 함수와 동일"""
