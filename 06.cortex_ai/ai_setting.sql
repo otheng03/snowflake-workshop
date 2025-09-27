@@ -13,6 +13,10 @@ GRANT USAGE ON SCHEMA snowflake_intelligence.agents TO ROLE accountadmin;
 
 GRANT CREATE AGENT ON SCHEMA snowflake_intelligence.agents TO ROLE accountadmin;
 
+// API
+GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE accountadmin;
+GRANT USAGE ON CORTEX SEARCH SERVICE DEMO.MAGI_HANDSON.docs_search TO ROLE accountadmin;
+
 ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
 
 -------------------------------------------------------- 
@@ -36,3 +40,19 @@ FILE_FORMAT = (type=csv FIELD_OPTIONALLY_ENCLOSED_BY='"' PARSE_HEADER = TRUE)
 MATCH_BY_COLUMN_NAME = case_insensitive;
 
 select * from image_data_chunk limit 10;
+
+
+------------------------ 
+
+SHOW CORTEX SEARCH SERVICES;
+
+SELECT PARSE_JSON(
+  SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
+      'DOCS_SEARCH',
+      '{
+         "query": "코스피",
+         "columns": ["CHUNK", "FILE_URL"],
+         "limit": 5
+      }'
+  )
+)['results'] as results;
