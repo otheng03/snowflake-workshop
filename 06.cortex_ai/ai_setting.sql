@@ -43,6 +43,7 @@ select * from image_data_chunk limit 10;
 
 
 ------------------------ 
+// cortex search API
 
 SHOW CORTEX SEARCH SERVICES;
 
@@ -56,3 +57,33 @@ SELECT PARSE_JSON(
       }'
   )
 )['results'] as results;
+
+------------------------ 
+// cortex search API
+
+CREATE OR REPLACE CORTEX SEARCH SERVICE DEMO.MAGI_HANDSON.ETF_NAME_SEARCH
+  ON ITEM_NM_KOR
+  ATTRIBUTES ETF_ITEM_CD
+  WAREHOUSE = COMPUTE_WH
+  TARGET_LAG = '1 hour'
+  EMBEDDING_MODEL = 'snowflake-arctic-embed-l-v2.0'
+AS (
+    SELECT ITEM_NM_KOR,
+            ETF_ITEM_CD
+      FROM DEMO.MAGI_HANDSON.SF_KOSCOM_ETFMST
+);
+
+
+select * FROM DEMO.MAGI_HANDSON.SF_KOSCOM_ETFMST limit 10;
+
+SELECT PARSE_JSON(
+  SNOWFLAKE.CORTEX.SEARCH_PREVIEW(
+      'ETF_NAME_SEARCH',
+      '{
+         "query": "선물인버스",
+         "columns": ["ITEM_NM_KOR","ETF_ITEM_CD"],
+         "limit": 10
+      }'
+  )
+)['results'] as results;
+
