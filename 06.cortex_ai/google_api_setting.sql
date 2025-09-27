@@ -6,6 +6,7 @@ CREATE OR REPLACE NETWORK RULE google_api_calls
   TYPE = HOST_PORT
   VALUE_LIST = ('www.googleapis.com');
 
+// trial 계정에서 사용 불가
 -- CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION api_access_integration
 -- ALLOWED_NETWORK_RULES = (google_api_calls)
 -- ENABLED = TRUE;

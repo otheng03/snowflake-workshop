@@ -1,3 +1,4 @@
+use role accountadmin;
 use demo.magi_handson;
 use warehouse compute_wh;
 
@@ -66,7 +67,7 @@ ALTER TABLE asset_info ADD ROW ACCESS POLICY mcp_role_mapping_policy ON (mcp_nm_
 
 
 // 새로운 custom role 생성
-create role role_A;
+create or replace role role_A;
 
 // db 와 schema 에 대한 접근 권한 할당
 grant usage on database demo to role role_A;
@@ -100,7 +101,7 @@ where mcp_nm_kor = '타임폴리오자산운용';
 ------------------------------------------------- 
 use role accountadmin;
 
-create role role_B;
+create or replace role role_B;
 grant usage on database demo to role role_B;
 grant usage on schema demo.magi_handson to role role_B;
 grant all privileges on schema demo.magi_handson to role role_B;
@@ -109,7 +110,7 @@ grant select on future tables in schema demo.magi_handson to role role_B;
 grant usage on warehouse compute_wh to role role_B;
 grant role role_B to user mjlee; 
 
-create role role_C;
+create or replace role role_C;
 grant usage on database demo to role role_C;
 grant usage on schema demo.magi_handson to role role_C;
 grant all privileges on schema demo.magi_handson to role role_C;
@@ -118,7 +119,7 @@ grant select on future tables in schema demo.magi_handson to role role_C;
 grant usage on warehouse compute_wh to role role_C;
 grant role role_C to user mjlee; 
 
-create role role_D;
+create or replace role role_D;
 grant usage on database demo to role role_D;
 grant usage on schema demo.magi_handson to role role_D;
 grant all privileges on schema demo.magi_handson to role role_D;

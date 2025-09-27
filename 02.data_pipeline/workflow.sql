@@ -18,7 +18,7 @@ on daily.etf_item_cd = master.etf_item_cd;
 
 // dynamic table  asset_info 생성
 create or replace dynamic table asset_info
-target_lag = '5 minutes'
+target_lag = '1 minutes'
 warehouse = compute_wh
 as
 select 
