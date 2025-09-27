@@ -25,7 +25,7 @@ CREATE OR REPLACE NETWORK RULE google_api_calls
 
 -- def call_api(session, query):
 
---     api_key = "AIzaSyDKxSXK0VV9FeJFggb-ybAwkIfiEpU4Byc"
+--     api_key = "AIzaSyDKxSXK0Vxxxxxxxxxxxxx"
 --     cx_id = "21d0bf132cb034776"  # 여기에 자신의 CX ID를 입력하세요
 --     url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={cx_id}&q={query}"
 
