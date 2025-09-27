@@ -7,7 +7,7 @@
 
 # 필수 설정값 - 여기를 수정하세요
 ACCOUNT="WQPKQED-NK88697"           # 예: abc123.us-east-1
-JWT_TOKEN="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXUVBLUUVELU5LODg2OTcuQVBJX1VTRVIuU0hBMjU2Ond3WUY3UEkvZW9sb0xsTmREZGgwVkNuUkFGckluZWRuSGptbVNWbWl4NWM9Iiwic3ViIjoiV1FQS1FFRC1OSzg4Njk3LkFQSV9VU0VSIiwiZXhwIjoxNzU4ODcyNDI4LCJpYXQiOjE3NTg4Njg4Mjh9.h1ihvfDEbWA-8dHKh91vuObtt95sUVrpRWDOd1XpNsBbFucH9eOCMfmapH9pcZMjI_ePZrN-il6mgRxVgnVE31LxkDvStcC_hehzJCTdmeS7AA507MAhyxgiT7v0PgjQ_F8ORPhf4P188x4Hb0RPQ4wgHsaVwJ9Wxa-jPTsoIDzjHvMloFlqrBayGlK53yQrOh6O97kh6Yy9x-FAKjslTPS_YS2T9nP_0XyhP7wI-aN2F_bW4bHR-TzRWO31JwDynvxqbPFjvOZ61CuF2sOHUKO-3KvTMu-IEGOWAlR7wnccXqUSqqqjDaw2NvyIJaqn-_AzwZgsBz8wuOv6vfJIzA"
+JWT_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 WAREHOUSE="COMPUTE_WH"             # 예: COMPUTE_WH
 DATABASE="DEMO"               # 선택사항
 SCHEMA="MAGI_HANDSON"                   # 선택사항 (보통 PUBLIC)
