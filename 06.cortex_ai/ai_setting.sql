@@ -13,4 +13,4 @@ GRANT USAGE ON SCHEMA snowflake_intelligence.agents TO ROLE accountadmin;
 
 GRANT CREATE AGENT ON SCHEMA snowflake_intelligence.agents TO ROLE accountadmin;
 
-
+ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
