@@ -27,4 +27,4 @@ Snowflake Workshop for AI Workspace
 - Snowflake Intelligence 구성 (Text to SQL)
 - Snowflake 에서 호출 가능한 커스텀 API 연동
 
-
+Test
